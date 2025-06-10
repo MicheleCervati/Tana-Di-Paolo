@@ -1,0 +1,53 @@
+body{
+    min-height: 100vh;
+}
+
+.btn-bd-primary {
+     --bd-violet-bg: #712cf9;
+     --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+     --bs-btn-font-weight: 600;
+     --bs-btn-color: var(--bs-white);
+     --bs-btn-bg: var(--bd-violet-bg);
+     --bs-btn-border-color: var(--bd-violet-bg);
+     --bs-btn-hover-color: var(--bs-white);
+     --bs-btn-hover-bg: #6528e0;
+     --bs-btn-hover-border-color: #6528e0;
+     --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+     --bs-btn-active-color: var(--bs-btn-hover-color);
+     --bs-btn-active-bg: #5a23c8;
+     --bs-btn-active-border-color: #5a23c8;
+ }
+
+.btn-bd-secondary {
+    --bd-azure-bg: #007bff;
+    --bd-azure-rgb: 0, 123, 255;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-azure-bg);
+    --bs-btn-border-color: var(--bd-azure-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #0056b3;
+    --bs-btn-hover-border-color: #0056b3;
+    --bs-btn-focus-shadow-rgb: var(--bd-azure-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #004085;
+    --bs-btn-active-border-color: #004085;
+}
+
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+}
+
+.bi {
+    width: 1em;
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.control-overflow {
+    width: 100%;
+    overflow-x: auto;
+}

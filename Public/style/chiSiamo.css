@@ -1,0 +1,627 @@
+:root {
+    --wine-color: #8B0000;
+    --wine-dark: #580000;
+    --wine-light: #f9f0f0;
+    --wine-light-alpha: rgba(139, 0, 0, 0.1);
+}
+
+/* Dark theme variables */
+[data-bs-theme="dark"] {
+    --wine-light: rgba(139, 0, 0, 0.15);
+    --wine-light-alpha: rgba(139, 0, 0, 0.2);
+}
+
+.text-wine {
+    color: var(--wine-color) !important;
+}
+
+.bg-wine {
+    background-color: var(--wine-color) !important;
+}
+
+.bg-wine-light {
+    background-color: var(--wine-light) !important;
+}
+
+.btn-wine {
+    background-color: var(--wine-color);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-wine:hover {
+    background-color: var(--wine-dark);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(139, 0, 0, 0.2);
+}
+
+.btn-outline-wine {
+    color: var(--wine-color);
+    border-color: var(--wine-color);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-wine:hover {
+    background-color: var(--wine-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(139, 0, 0, 0.1);
+}
+
+/* Hero Section */
+.about-hero {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio - adjust based on your image */
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: scroll;
+    z-index: -1;
+}
+
+.about-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* Wine Dividers */
+.wine-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.wine-divider .line {
+    width: 60px;
+    height: 2px;
+    background-color: var(--wine-color);
+    margin: 0 15px;
+}
+
+.wine-divider-light .line-light {
+    width: 60px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 0 15px;
+}
+
+.wine-divider i, .wine-divider-light i {
+    font-size: 1.5rem;
+}
+
+.wine-divider-small {
+    display: flex;
+    align-items: center;
+}
+
+.wine-divider-small .line-sm {
+    width: 40px;
+    height: 2px;
+    background-color: var(--wine-color);
+    margin: 0 10px;
+}
+
+.wine-divider-small i {
+    font-size: 1rem;
+    color: var(--wine-color);
+}
+
+/* Team Section - Responsive to theme */
+.team-card {
+    position: relative;
+    background-color: var(--bs-body-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .team-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(139, 0, 0, 0.15);
+}
+
+[data-bs-theme="dark"] .team-card:hover {
+    box-shadow: 0 15px 35px rgba(139, 0, 0, 0.25);
+}
+
+.team-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.team-image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-image {
+    transform: scale(1.05);
+}
+
+.team-wine-glass {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--wine-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
+}
+
+.team-content {
+    padding: 2rem 1.5rem 1.5rem;
+}
+
+.team-description {
+    color: var(--bs-secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.team-social {
+    display: flex;
+    gap: 10px;
+}
+
+.team-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--bs-secondary-bg);
+    color: var(--wine-color);
+    transition: all 0.3s ease;
+}
+
+.team-social-link:hover {
+    background-color: var(--wine-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Philosophy Points */
+.philosophy-point {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.philosophy-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--wine-color);
+    color: white;
+    font-size: 1.25rem;
+}
+
+/* Services Cards - Theme responsive */
+.service-card {
+    padding: 2.5rem;
+    border-radius: 15px;
+    background-color: var(--bs-body-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .service-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(139, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .service-card:hover {
+    box-shadow: 0 15px 35px rgba(139, 0, 0, 0.2);
+}
+
+.service-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--wine-light);
+    color: var(--wine-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Stats Cards - Theme responsive */
+.stats-card {
+    padding: 2rem;
+    background-color: var(--bs-body-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .stats-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(139, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .stats-card:hover {
+    box-shadow: 0 15px 35px rgba(139, 0, 0, 0.2);
+}
+
+.stats-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--wine-light);
+    color: var(--wine-color);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.stats-label {
+    font-weight: 600;
+    color: var(--bs-secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+/* Testimonial Cards - Theme responsive */
+.testimonial-card {
+    padding: 2rem;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+[data-bs-theme="dark"] .testimonial-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-bs-theme="dark"] .testimonial-card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-content {
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.testimonial-rating {
+    margin-bottom: 0.5rem;
+    color: #FFD700;
+}
+
+/* CTA Section */
+.cta-section-about {
+    position: relative;
+    background-image: url('<?=$path?>/Public/image/cantina.jpg>?');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.cta-section-about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.95) 0%, rgba(80, 0, 0, 0.85) 100%);
+}
+
+.cta-section-about .container {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-wine-glass {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.cta-wine-glass svg {
+    width: 100%;
+}
+
+/* Contact Section - Theme responsive */
+.contact-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--wine-light);
+    color: var(--wine-color);
+    font-size: 1.25rem;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--wine-light);
+    color: var(--wine-color);
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--wine-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.contact-form-card {
+    padding: 2.5rem;
+    border-radius: 15px;
+    background-color: var(--bs-body-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .contact-form-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Map Section - Theme responsive */
+.map-container {
+    position: relative;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.map-card {
+    background-color: var(--bs-body-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    pointer-events: auto;
+    border: 1px solid var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .map-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Decorative elements - Theme responsive */
+.wine-bottle-overlay {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--bs-body-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .wine-bottle-overlay {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.wine-bottle-overlay i {
+    font-size: 2.5rem;
+}
+
+.wine-drops-overlay {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--bs-body-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--bs-border-color);
+}
+
+[data-bs-theme="dark"] .wine-drops-overlay {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.wine-drops-overlay i {
+    font-size: 1.25rem;
+    color: var(--wine-color);
+    margin: -3px 0;
+}
+
+/* Animation for stats counter */
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.counter-value {
+    animation: countUp 1s ease-out forwards;
+}
+
+/* Enhanced dark mode support for text elements */
+[data-bs-theme="dark"] .team-description,
+[data-bs-theme="dark"] .stats-label {
+    color: var(--bs-secondary-color);
+}
+
+[data-bs-theme="dark"] .philosophy-content h4,
+[data-bs-theme="dark"] .philosophy-content p {
+    color: var(--bs-body-color);
+}
+
+/* Improve form elements for dark theme */
+[data-bs-theme="dark"] .form-control {
+    background-color: var(--bs-body-bg);
+    border-color: var(--bs-border-color);
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .form-control:focus {
+    background-color: var(--bs-body-bg);
+    border-color: var(--wine-color);
+    color: var(--bs-body-color);
+    box-shadow: 0 0 0 0.25rem rgba(139, 0, 0, 0.25);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 991.98px) {
+    .about-hero {
+        height: 60vh;
+    }
+
+    .map-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .about-hero {
+        height: 50vh;
+    }
+
+    .wine-divider .line, .wine-divider-light .line-light {
+        width: 40px;
+    }
+
+    .contact-form-card {
+        padding: 1.5rem;
+    }
+
+    .service-card,
+    .stats-card {
+        padding: 1.5rem;
+    }
+
+    .team-content {
+        padding: 1.5rem 1rem 1rem;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .team-card,
+    .service-card,
+    .stats-card,
+    .testimonial-card,
+    .btn-wine,
+    .btn-outline-wine,
+    .team-social-link,
+    .social-link {
+        transition: none;
+    }
+
+    .team-card:hover,
+    .service-card:hover,
+    .stats-card:hover,
+    .testimonial-card:hover,
+    .btn-wine:hover,
+    .btn-outline-wine:hover,
+    .team-social-link:hover,
+    .social-link:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .team-card,
+    .service-card,
+    .stats-card,
+    .contact-form-card,
+    .map-card {
+        border: 2px solid var(--bs-border-color);
+    }
+
+    .btn-wine,
+    .btn-outline-wine {
+        border: 2px solid var(--wine-color);
+    }
+}
